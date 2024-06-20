@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincord Schools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#MANAGEMENT">management regards</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul><button class="menu-toggle">Toggle Menu</button>
+		</nav>
+	</header>
+	
+	<script>
+		const menuToggle = document.querySelector('.menu-toggle');
+		const navigation = document.querySelector('nav ul');
+		
+		menuToggle.addEventListener('click', () => {
+			navigation.classList.toggle('active');
+		});
+	</script>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1><b>Welcome to Vincord Schools</h1>
+      <p>
+
+Welcome to Vincord schools, a premier educational institution dedicated to providing students with a comprehensive and well-rounded education. Our mission is to foster a love of learning, creativity, and critical thinking, and to prepare our students for success in an ever-changing world.
+
+At Vincord schools, we offer a wide range of academic programs, extracurricular activities, and resources to support our students intellectual, personal, and professional growth. Our experienced and dedicated faculty are committed to providing a supportive and inclusive learning environment that encourages students to explore their passions and interests.
+
+Whether youre a prospective student, a current student, or a member of our alumni community, we invite you to explore our website and learn more about the Vincord schools experience. Discover our academic programs, meet our faculty and staff, and learn about our admissions process. We look forward to welcoming you to our community</b></p>
+      <button>Learn More</button>
+      <html>
+<body>
+	<a href="page1.html" onclick="window.open('page2.html', '_blank')">Click me!</a>
+	<script>
+		document.addEventListener('click', function(evt){
+			if(evt.target.tagName === 'A'){
+				window.open(evt.target.href, '_blank');
+			}
+		});
+	</script>
+</body>
+</html>
+    </section>
+    <section>
+    <h2>Management regards</h2>
+       <p><div class="owner-info">
+  <h2>Founder & Owner</h2>
+<img src="founder.jpg" style="width: 200px; height: auto;">
+         <b><p><h3>Mrs Nwagu Amaka</p></h3>
+  <p>Founder and owner of Vincord schools, dedicated to providing quality education.</p>
+</div></b>
+      <p><b>_Management Team_
+        <p><b>We are proud to have a dedicated and experienced management team that guides and supports our college community.
+</b></p>
+        <p>Principals</p>
+        <p>Welcome to Vincord schools! As the Principal, I am committed to ensuring that our students receive a world-class education that prepares them for success. Our talented faculty and staff are dedicated to providing a supportive and inclusive learning environment.
+
+          <p>_Department Heads_</p>
+
+          <p>We have a team of experienced department heads who lead our various academic departments. They are responsible for curriculum development, faculty management, and student mentorship.</p>
+
+          <p>Administrative Staff_</p>
+
+          <p>Our administrative staff are dedicated professionals who provide essential support services to our students, faculty, and staff. They are responsible for admissions, finance, student affairs, and facilities management.</p>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p><b>Our school was founded in 2001 with a vision to provide quality education.</p>
+      <p>Our mission is to foster a love of learning and prepare students for success.</p></b>
+    </section>
+    <section id="students">
+      <h2><b>Students</h2>
+      <p>Check your results, view your schedule, and access student resources.</p></b>
+      <button> Student Login </button>- 
+	<h2>Student ID Generator</h2>
+	<button id="generate-id-btn">Generate ID</button>
+	<p id="generated-id"></p>
+	<label for="id-type">ID Type:</label>
+	<select id="id-type">
+		<option value="student">Student</option>
+		<option value="teacher">Teacher</option>
+		<option value="staff">Staff</option>
+	</select>
+	<label for="id-prefix">Prefix:</label>
+	<input type="text" id="id-prefix" value="VC-">
+	<button id="save-id-btn">Save ID</button>
+	
+	<script>
+		const generateIdBtn = document.getElementById('generate-id-btn');
+		const generatedIdParagraph = document.getElementById('generated-id');
+		const idTypeSelect = document.getElementById('id-type');
+		const idPrefixInput = document.getElementById('id-prefix');
+		const saveIdBtn = document.getElementById('save-id-btn');
+		
+		generateIdBtn.addEventListener('click', generateId);
+		saveIdBtn.addEventListener('click', saveId);
+		
+		function generateId() {
+			const idType = idTypeSelect.value;
+			const idPrefix = idPrefixInput.value;
+			const uniqueId = generateUniqueId();
+			const studentId = `${idPrefix}${idType}-${uniqueId}`;
+			generatedIdParagraph.textContent = studentId;
+		}
+		
+		function generateUniqueId() {
+			return Math.floor(Math.random() * 1000000) + 1;
+		}
+		
+		function saveId() {
+			const studentId = generatedIdParagraph.textContent;
+			// Save the student ID to a database or file
+			console.log(`Student ID saved: ${studentId}`);
+		}
+	</script>
+</body>
+</html>
+    </section>
+    <section id="results">
+      <h2>Results</h2>
+      <p>Enter your student ID and password to check your results.</p>
+      <form>
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="studentID"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <button>Check Results</button>
+      </form>
+      <div id="results-container"> <html>
+<head>
+	<title>Student Results</title>
+</head>
+<body>
+	<h1>Student Results</h1>
+	<script>
+		function checkResults() {
+			const studentID = document.getElementById("studentID").value;
+			const password = document.getElementById("password").value;
+			
+			// API call or database query to retrieve results
+			const results = [{"subject": "Math", "grade": "A"}, {"subject": "Science", "grade": "B"}];
+			
+			displayResults(results);
+		}
+		
+		function displayResults(results) {
+			const resultsHTML = results.map((result) => `<p>${result.subject}: ${result.grade}</p>`).join('');
+			document.getElementById("results-container").innerHTML = resultsHTML;
+		}
+	</script>
+</body>
+</html>!-- Results will be displayed here --> </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for inquiries or feedback.</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button>Send</button>
+      </form>
+    </section>
+    <section id="library">
+      <h2>Library</h2>
+      <p>Search our catalog , access e-resources on https://company.overdrive.com/ebooks</p>
+      <form>
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search"><br>
+        <button>Search</button> 
+        <script>}
+      function searchLibrary() {
+  const query = searchInput.value;
+  // API call or database query to search library catalog
+  const results = [{"title": "Book 1", "author": "Author 1"}, {"title": "Book 2", "author": "Author 2"}];
+  displaySearchResults(results);</script>
+      </form>
+      <ul>
+        <li><a href="#">E-Resources</a></li>
+        <li><a href="#">Library Services</a></li>
+        <li><a href="#">Catalog</a></li>
+      </ul>
+    </section>
+    <section id="teachers">
+      <h2>Teachers & Staff</h2>
+      <p>Upload results and access staff resources.</p>
+      <form>
+        <label for="results">Upload Results:</label>
+        <input type="file" id="results" name="results"><br>
+        <button>Upload</button>
+      </form>
+      <ul>
+        <li><a href="#">Staff Resources</a></li>
+        <li><a href="#">Teacher Profiles</a></li>
+      </ul>
+    </section>
+    <section id="News and blogs">
+      <h2>News and blogs</h2>
+      <p><b>Title: The Indispensable Role of Mathematics in Our Lives</p>
+
+      <p>Author: Master Samuel</p>
+
+      <p>Mathematics is often viewed as a complex and intimidating subject, but its importance cannot be overstated. It is the language of the universe, a tool for problem-solving, and a foundation for countless scientific and technological advancements. As a math enthusiast and educator, I, Master Samuel, aim to highlight the significance of mathematics in our daily lives.
+
+Mathematics is the backbone of science and technology. It provides the framework for understanding and analyzing the world around us. From the intricate patterns on a butterflyys wings to the vast expanse of the cosmos, mathematics is the key to unlocking the secrets of the universe. It has led to numerous breakthroughs in fields like physics, engineering, and computer science.
+
+Mathematics is also essential for critical thinking and problem-solving skills. It teaches us to approach challenges in a logical and methodical way, breaking down complex problems into manageable parts. These skills are valuable in all aspects of life, from personal finance to decision-making.
+
+Moreover, mathematics has numerous practical applications in our daily lives. It is used in:<click()<read more></read>
+
+        <p>- Architecture and construction
+- Medicine and healthcare
+- Economics and finance
+- Environmental science and conservation
+- Computer programming and coding</p>
+
+In conclusion, mathematics is an indispensable subject that plays a vital role in our understanding of the world and our ability to solve problems. As Master Samuel, I encourage students and educators alike to embrace mathematics with enthusiasm and passion. By doing so, we can unlock its secrets and harness its power to shape a brighter future.
+
+</p></b>
+      <button>learn more</button>
+      <div id=""> <!-- Dashboard will be displayed here --> </div>
+    </section>
+    
+        
+    </section>
+    </div>
+  </a>
+</li>
+  </main>
+  <footer>
+    <b><p>Copyright © 2024 Vincord College. All rights reserved.</p></b>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
